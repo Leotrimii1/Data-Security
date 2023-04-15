@@ -54,3 +54,26 @@ def encrypt_text(text):
         image.putpixel((i, i), color)
 
     return image
+
+# Decryption function
+def decrypt_text(image):
+    # Determine the dimensions of the image
+    width, height = image.size
+
+    # Retrieve the color of each pixel along the diagonal
+    colors = [image.getpixel((i, i)) for i in range(width)]
+
+    # Map each color to a character and concatenate the results
+    text = "".join([next((char for char, color in color_map.items() if color == c), "") for c in colors])
+
+    return text
+
+# Example usage
+plaintext = "DataSecurity"
+encrypted_image = encrypt_text(plaintext)
+decrypted_text = decrypt_text(encrypted_image)
+
+print("Plaintext: ", plaintext)
+print("Encrypted image: ")
+encrypted_image.show()
+print("Decrypted text: ", decrypted_text)
