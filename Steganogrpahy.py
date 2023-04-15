@@ -105,10 +105,7 @@ def decrypt_text(image):
             text += " "  # add a space for white pixels
         else:
             text += next((char for char, color in color_map.items() if color == c), "")
-
-
-    return text
-
+            
     return text
 
 # Example usage
