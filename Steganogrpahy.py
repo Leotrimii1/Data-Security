@@ -1,7 +1,6 @@
 from PIL import Image
 import random
 
-image_path = r'C:\Users\User\Desktop\Python\Picture1.png'
 # Mapping of characters to colors
 color_map = {
     "a": (255, 0, 0), # red
@@ -113,7 +112,7 @@ def decrypt_text(image):
     return text
 
 # Example usage
-plaintext = "Leotrim2    34@@$!lirak"
+plaintext = "Data Security - Group 26"
 encrypted_image = encrypt_text(plaintext)
 decrypted_text = decrypt_text(encrypted_image)
 
